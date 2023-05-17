@@ -7,26 +7,29 @@ slideOptions:
 
 # [ACR]
 
-<section data-background-image="https://i.imgur.com/P2hakdR.jpg" />
+<!-- <section data-background-image="https://i.imgur.com/P2hakdR.jpg" />-->
+![](https://i.imgur.com/P2hakdR.jpg)
 
 ---
 
 ## Known Issues in AgriCulture
 
-<section data-background-image="https://i.imgur.com/YbZlPYw.png" />
+<!--<section data-background-image="https://i.imgur.com/YbZlPYw.png" />-->
+![](https://i.imgur.com/YbZlPYw.png)
+---
+
+## Known Issues in AgriCulture
+
+<!--<section data-background-image="https://i.imgur.com/hakRjTE.png" />-->
+![](https://i.imgur.com/hakRjTE.png)
 
 ---
 
 ## Known Issues in AgriCulture
 
-<section data-background-image="https://i.imgur.com/hakRjTE.png" />
-
----
-
-## Known Issues in AgriCulture
-
-<section data-background-image="https://i.imgur.com/QV8qhbP.png"/>
-
+<!--<section data-background-image="https://i.imgur.com/QV8qhbP.png"/>
+-->
+![](https://i.imgur.com/QV8qhbP.png)
 ---
 
 > An industry solution for an industry problem.
