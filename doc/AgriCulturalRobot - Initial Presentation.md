@@ -126,8 +126,8 @@ slideOptions:
 
 ## ... with local ressources
 
-<section data-background-image="https://i.imgur.com/48supoU.jpg"/>
-
+<!--<section data-background-image="https://i.imgur.com/48supoU.jpg"/>-->
+![](https://i.imgur.com/48supoU.jpg)
 ---
 
 ## ... with local ressources
@@ -160,7 +160,9 @@ slideOptions:
 
 ---
 
-<section data-background-image="https://i.imgur.com/P2hakdR.jpg" />
+<!--<section data-background-image="https://i.imgur.com/P2hakdR.jpg" />-->
+
+![](https://i.imgur.com/P2hakdR.jpg)
 
 # let us begin
 
