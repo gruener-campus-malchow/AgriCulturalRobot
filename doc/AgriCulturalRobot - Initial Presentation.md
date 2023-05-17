@@ -72,8 +72,7 @@ slideOptions:
 
 ## all terrain: insectoid
 
-<img style="max-height: max-content;" src="https://i.imgur.com/RiXTNo4.png
-"/>
+<img style="max-height: max-content;" src="https://i.imgur.com/RiXTNo4.png"/>
 
 ---
 
