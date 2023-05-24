@@ -1,0 +1,1 @@
+Die Skripte sind zum Ausplündern gedacht. Sie enthalten ein paar Konzepte, wie man mit Benutzereingaben umgehen kann oder wie man den Tastgrad (dutycycle) dynamisch verändern kann... für sanftes Anfahren und Stoppen.
