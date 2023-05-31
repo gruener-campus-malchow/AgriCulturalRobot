@@ -10,5 +10,8 @@ dutyCycle = 7.2
 steps = 0.05
 servo.start(0) # Initialisierung
 
-zahl = float(input("Bitte neuen Tastgrad eingeben: "))
-print = "Der neue Tastgrad ist" + str(zahl)
+while True:
+    zahl = float(input("Bitte neuen Tastgrad eingeben: "))
+    print("Der neue Tastgrad ist" + str(zahl))
+    servo.ChangeDutyCycle(zahl)
+
