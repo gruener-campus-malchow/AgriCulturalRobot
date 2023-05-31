@@ -50,12 +50,12 @@ def start_servo():
 		GPIO.cleanup()
   		
 def stop_servo():
-	try:
-  		while dutyCycle>7.2:
-    		dutyCycle = dutyCycle-steps
-    		print("Aktueller dutyCycle: "+str(dutyCycle))
-    		servo.ChangeDutyCycle(dutyCycle)
-    		time.sleep(0.01)
-	except KeyboardInterrupt:
-  		servo.stop()
-  		GPIO.cleanup()
+    try:
+        while dutyCycle>7.2:
+            dutyCycle = dutyCycle-steps
+            print("Aktueller dutyCycle: "+str(dutyCycle))
+            servo.ChangeDutyCycle(dutyCycle)
+            time.sleep(0.01)
+    except KeyboardInterrupt:
+        servo.stop()
+        GPIO.cleanup()
