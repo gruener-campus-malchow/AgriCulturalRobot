@@ -12,7 +12,6 @@ dutyCycle = 7.2
 steps = 0.05
 servo.start(0) # Initialisierung
 
-
 ObstaclePin = 27
 
 def setup():
@@ -24,12 +23,12 @@ def start_servo():
 	global servo
 
 	try:
-		while dutyCycle<9:
-
+		while dutyCycle < 9:
 			dutyCycle = dutyCycle + steps
-			print("Aktueller dutyCycle: "+str(dutyCycle))
+			print("Aktueller dutyCycle: " + str(dutyCycle))
 			servo.ChangeDutyCycle(dutyCycle)
 			time.sleep(0.01)
+
 	except KeyboardInterrupt:
 		servo.stop()
 		GPIO.cleanup()
@@ -40,11 +39,12 @@ def stop_servo():
 	global servo
 	
 	try:
-		while dutyCycle>7.2:
-			dutyCycle = dutyCycle-steps
-			print("Aktueller dutyCycle: "+str(dutyCycle))
+		while dutyCycle > 7.2:
+			dutyCycle = dutyCycle - steps
+			print("Aktueller dutyCycle: " + str(dutyCycle))
 			servo.ChangeDutyCycle(dutyCycle)
 			time.sleep(0.01)
+
 	except KeyboardInterrupt:
 		servo.stop()
 		GPIO.cleanup()
@@ -53,10 +53,10 @@ def stop_servo():
 def loop():
 	while True:
 		if (0 == GPIO.input(ObstaclePin)):
-			print ("Detected Barrier!")
-			start_servo();
+			print("Detected Barrier!")
+			start_servo()
 		else:
-			stop_servo();
+			stop_servo()
 
 
 def destroy():
