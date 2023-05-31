@@ -33,6 +33,8 @@ def start_servo():
 		GPIO.cleanup()
   		
 def stop_servo():
+	global steps
+	global dutyCycle
     try:
         while dutyCycle>7.2:
             dutyCycle = dutyCycle-steps
