@@ -2,6 +2,7 @@
 import RPi.GPIO as GPIO
 import time
 
+GPIO.cleanup()
 
 servoPIN = 18
 GPIO.setmode(GPIO.BCM)
