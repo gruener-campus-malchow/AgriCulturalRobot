@@ -9,6 +9,8 @@ GPIO.setup(servoPIN, GPIO.OUT)
 servo = GPIO.PWM(servoPIN, 50) # GPIO 18 als PWM mit 50Hz
 dutyCycle = 7.2
 steps = 0.05
+servo.start(0) # Initialisierung
+
 
 ObstaclePin = 27
 
@@ -16,13 +18,15 @@ def setup():
 	GPIO.setup(ObstaclePin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 def start_servo():
-	servo.start(0) # Initialisierung
+	global steps
+	global dutyCycle
 
 	try:
 		while dutyCycle<9:
-			global dutyCycle = global dutyCycle + global steps
-			print("Aktueller dutyCycle: "+str(global dutyCycle))
-			servo.ChangeDutyCycle(global dutyCycle)
+
+			dutyCycle = dutyCycle + steps
+			print("Aktueller dutyCycle: "+str(dutyCycle))
+			servo.ChangeDutyCycle(dutyCycle)
 			time.sleep(0.01)
 	except KeyboardInterrupt:
 		servo.stop()
