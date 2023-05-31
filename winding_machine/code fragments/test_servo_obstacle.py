@@ -20,6 +20,7 @@ def setup():
 def start_servo():
 	global steps
 	global dutyCycle
+	global servo
 
 	try:
 		while dutyCycle<9:
@@ -35,15 +36,17 @@ def start_servo():
 def stop_servo():
 	global steps
 	global dutyCycle
+	global servo
+	
 	try:
 		while dutyCycle>7.2:
-            dutyCycle = dutyCycle-steps
-            print("Aktueller dutyCycle: "+str(dutyCycle))
-            servo.ChangeDutyCycle(dutyCycle)
-            time.sleep(0.01)
+			dutyCycle = dutyCycle-steps
+			print("Aktueller dutyCycle: "+str(dutyCycle))
+			servo.ChangeDutyCycle(dutyCycle)
+			time.sleep(0.01)
 	except KeyboardInterrupt:
-        servo.stop()
-        GPIO.cleanup()
+		servo.stop()
+		GPIO.cleanup()
 
 
 def loop():
