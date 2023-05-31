@@ -15,25 +15,6 @@ ObstaclePin = 27
 def setup():
 	GPIO.setup(ObstaclePin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
-def loop():
-	while True:
-		if (0 == GPIO.input(ObstaclePin)):
-			print ("Detected Barrier!")
-			start_servo();
-		else:
-			stop_servo();
-
-
-def destroy():
-	GPIO.cleanup()                     # Release resource
-
-if __name__ == '__main__':     # Program start from here
-	setup()
-	try:
-		loop()
-	except KeyboardInterrupt:  # When 'Ctrl+C' is pressed, the child program destroy() will be  executed.
-		destroy()
-        
 def start_servo():
 	servo.start(0) # Initialisierung
 
@@ -57,3 +38,25 @@ def stop_servo():
     except KeyboardInterrupt:
         servo.stop()
         GPIO.cleanup()
+
+
+def loop():
+	while True:
+		if (0 == GPIO.input(ObstaclePin)):
+			print ("Detected Barrier!")
+			start_servo();
+		else:
+			stop_servo();
+
+
+def destroy():
+	GPIO.cleanup()                     # Release resource
+
+if __name__ == '__main__':     # Program start from here
+	setup()
+	try:
+		loop()
+	except KeyboardInterrupt:  # When 'Ctrl+C' is pressed, the child program destroy() will be  executed.
+		destroy()
+        
+
