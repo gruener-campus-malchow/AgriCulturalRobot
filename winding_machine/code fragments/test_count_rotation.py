@@ -27,7 +27,7 @@ def start_servo():
 	try:
 		while dutyCycle < 9:
 			dutyCycle = dutyCycle + steps
-			print("Aktueller dutyCycle: " + str(dutyCycle))
+			#print("Aktueller dutyCycle: " + str(dutyCycle))
 			servo.ChangeDutyCycle(dutyCycle)
 			time.sleep(0.01)
 
@@ -44,7 +44,7 @@ def stop_servo():
 	try:
 		while dutyCycle > minimal_dc:
 			dutyCycle = dutyCycle - steps
-			print("Aktueller dutyCycle: " + str(dutyCycle))
+			#print("Aktueller dutyCycle: " + str(dutyCycle))
 			servo.ChangeDutyCycle(dutyCycle)
 			time.sleep(0.01)
 		servo.ChangeDutyCycle(0)
@@ -65,6 +65,7 @@ def loop():
 			if event == 0:
 				event = 1
 				counter = counter + 1
+				print ("Zähler: " + str(counter))
 		else:
 			event = 0
 	stop_servo()
