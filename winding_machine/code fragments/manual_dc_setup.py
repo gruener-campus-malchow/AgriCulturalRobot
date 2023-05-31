@@ -12,6 +12,6 @@ servo.start(0) # Initialisierung
 
 while True:
     zahl = float(input("Bitte neuen Tastgrad eingeben: "))
-    print("Der neue Tastgrad ist" + str(zahl))
+    print("Der neue Tastgrad ist: " + str(zahl))
     servo.ChangeDutyCycle(zahl)
 
