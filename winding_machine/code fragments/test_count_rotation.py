@@ -46,7 +46,7 @@ def stop_servo():
 			dutyCycle = dutyCycle - steps
 			#print("Aktueller dutyCycle: " + str(dutyCycle))
 			servo.ChangeDutyCycle(dutyCycle)
-			time.sleep(0.01)
+			#time.sleep(0.01)
 		servo.ChangeDutyCycle(0)
 
 	except KeyboardInterrupt:
