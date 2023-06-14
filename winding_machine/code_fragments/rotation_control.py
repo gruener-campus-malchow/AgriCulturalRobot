@@ -18,8 +18,7 @@ backwards_max = 9
 
 while True:
     zahl = float(input("direction and speed from -1.0 to 1.0 "))
-    print("new direction and speed: " + str(zahl))
-
+    
     if zahl < 0:
         difference = backwards_max - backwards_min
         dc_change = difference * zahl
@@ -32,3 +31,4 @@ while True:
         new_dc = 0
 
     servo.ChangeDutyCycle(new_dc)
+    print("new direction and speed: " + str(new_dc))
