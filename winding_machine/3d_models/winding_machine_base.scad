@@ -4,6 +4,14 @@ base_z = 5;
 base_t = 5;
 base_height = 30;
 
+servo_mount_strength = 2;
+servo_mount_width = 5;
+servo_mount_gap = 2.5;
+
+servo_y = 22;
+servo_z = 11;
+
+
 $fn=30;
 
 base();
@@ -34,4 +42,15 @@ module edge_square(height,thickness, distance)
 
 module cap(){
     cube([base_y,base_y,base_z]);
+    translate([base_y-servo_mount_strength,base_y/2+servo_y/2,base_z])cube([servo_mount_strength,servo_mount_width,servo_z]);
+    translate([base_y-servo_mount_strength,base_y/2-servo_y/2-servo_mount_width,base_z])cube([servo_mount_strength,servo_mount_width,servo_z]);
+    translate([base_y-servo_mount_strength-servo_mount_gap-servo_mount_strength,base_y/2+servo_y/2,base_z])cube([servo_mount_strength,servo_mount_width,servo_z]);
+    translate([base_y-servo_mount_strength-servo_mount_gap-servo_mount_strength,base_y/2-servo_y/2-servo_mount_width,base_z])cube([servo_mount_strength,servo_mount_width,servo_z]);
+    
+    translate([base_y-(2*servo_mount_strength + servo_mount_gap),base_y/2-servo_y/2-servo_mount_width-servo_mount_strength,base_z])cube([2*servo_mount_strength + servo_mount_gap,servo_mount_strength,servo_z]);
+    
+    translate([base_y-(2*servo_mount_strength + servo_mount_gap),base_y/2+servo_y/2+servo_mount_width,base_z])cube([2*servo_mount_strength + servo_mount_gap,servo_mount_strength,servo_z]);
+    
+    // HIER MÜSSEN LÖCHER MODELLIERT WERDEN
+    
 }
