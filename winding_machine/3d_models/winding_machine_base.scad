@@ -1,3 +1,5 @@
+
+
 base_x = 100;
 base_y = 50;
 base_z = 5;
@@ -16,20 +18,50 @@ servo_connector = 4;
 servo_con_height = 3;
 servo_gear_height = 4;
 
+coil_holder_diameter = 20;
+
 $fn=30;
 
-//visible();
+visible();
+//coil_adapter();
 
-coil_holder();
+
+
+module coil_adapter(){
+    difference(){
+       cylinder(5, d= coil_holder_diameter, center = true) ;
+        union(){
+            translate([5,-1.5,-3])cube([5,3.5,15]);
+            translate([-10,-1.5,-3])cube([5,3.5,15]);
+            
+            translate([0,0,-2])cylinder(5,d=7,center=true);
+            
+            translate([0,0,-5])cylinder(20,d=3.5,center=true);
+            translate([0,0,2]) nut(6.5,6,0);
+        }
+    }
+}
+
+module nut(size, height, toleranz){
+    factor = size/4;
+    scale([factor+toleranz,factor+toleranz,1])union(){
+        color("red") translate([-2,-3.5,0])cube([4,7,height]);
+        color("red") rotate([0,0,180/3])translate([-2,-3.5,0])cube([4,7,height]);
+        color("red") rotate([0,0,-180/3])translate([-2,-3.5,0])cube([4,7,height]);
+    }
+}
 
 module visible()
 {
     base();
     translate([0,0,base_height+base_t])cap();
     translate([base_x/2-servo_x+3.5,base_y/2-servo_y/2,base_height+base_t*2])servo();
+    
     translate([base_x/2-6-5,0,base_height+base_t*2])color("purple")laser_fork();
-
     translate([base_x/2+20,0,base_height+base_t*2])color("purple")laser_fork();
+    
+    translate([base_x/2 + servo_x/1.5, base_y/2-servo_y/2 + servo_z/2, base_height+2*base_z + 0.5*servo_z])rotate([0,90,0])coil_holder();
+    translate([base_x/2 + servo_x, base_y/2-servo_y/2 + servo_z/2, base_height+2*base_z + 0.5*servo_z])rotate([0,90,0])coil_adapter();
 }
 
 module servo()
@@ -112,7 +144,7 @@ module coil_holder()
     difference()
     {
         union(){
-            cylinder(1, d = 20, center=true);
+            cylinder(1, d = coil_holder_diameter, center=true);
             cube([40,5,1],true);
             translate([0,0,-3.5])cylinder(3, d = servo_z);
             
