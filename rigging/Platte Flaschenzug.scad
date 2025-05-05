@@ -1,3 +1,4 @@
+$fn=100;
 difference(){
     scale([1,0.4,1])cylinder(3,50,50);
     union(){
